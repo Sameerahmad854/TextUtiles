@@ -64,10 +64,10 @@ function Navbar({ title, mode, toggleMode, changeThemeColor }) {
 
           <button
             className="btn mx-1"
-            style={{ backgroundColor: "yellow", color: "black" }}
-            onClick={() => changeThemeColor("yellow")}
+            style={{ backgroundColor: "orange", color: "black" }}
+            onClick={() => changeThemeColor("orange")}
           >
-            Yellow
+            orange
           </button>
         </div>
       </div>

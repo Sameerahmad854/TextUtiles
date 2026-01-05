@@ -1,27 +1,36 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
+import React from "react";
 
-export default function About() {
-  const [myStyle, setMyStyle] = useState({
-    color: "white",
-    backgroundColor: "black",
-  });
-
-  const toggleStyle = () => {
-    if (myStyle.color === "white") {
-      setMyStyle({
-        color: "black",
-        backgroundColor: "white",
-      });
-    } else {
-      setMyStyle({
-        color: "white",
-        backgroundColor: "black",
-      });
-    }
+export default function About(props) {
+  // const [myStyle, setMyStyle] = useState({
+  //   color: "white",
+  //   backgroundColor: "black",
+  // });
+  let myStyle = {
+    color: props.mode === "dark" ? "white" : "#042743",
+    backgroundColor: props.mode === "dark" ? "rgba(23, 90, 141, 1)" : "white",
+    border: "2px solid",
+    borderColor: props.mode === "dark" ? "rgba(23, 90, 141, 1)" : "white",
   };
+  // const toggleStyle = () => {
+  //   if (myStyle.color === "white") {
+  //     setMyStyle({
+  //       color: "black",
+  //       backgroundColor: "white",
+  //     });
+  //   } else {
+  //     setMyStyle({
+  //       color: "white",
+  //       backgroundColor: "black",
+  //     });
+  //   }
+  // };
 
   return (
-    <div className="container" style={myStyle}>
+    <div
+      className="container"
+      style={{ color: props.mode === "dark" ? "white" : "#326289ff" }}
+    >
       <h1 className="my-3">About TextUtils</h1>
 
       <div className="accordion" id="accordionExample" style={myStyle}>
@@ -37,7 +46,7 @@ export default function About() {
               aria-expanded="true"
               aria-controls="collapseOne"
             >
-              TextUtils Overview
+              <strong> TextUtils Overview</strong>
             </button>
           </h2>
           <div
@@ -65,7 +74,7 @@ export default function About() {
               aria-expanded="false"
               aria-controls="collapseTwo"
             >
-              Features
+              <strong>Features</strong>
             </button>
           </h2>
           <div
@@ -94,7 +103,7 @@ export default function About() {
               aria-expanded="false"
               aria-controls="collapseThree"
             >
-              Why Use TextUtils?
+              <strong>Why Use TextUtils?</strong>
             </button>
           </h2>
           <div
@@ -113,9 +122,9 @@ export default function About() {
 
       {/* Dark/Light Mode Toggle Button */}
       <div className="container my-3">
-        <button onClick={toggleStyle} className="btn btn-danger">
+        {/* <button onClick={toggleStyle} className="btn btn-danger">
           Enable Dark/Light Mode
-        </button>
+        </button> */}
       </div>
     </div>
   );
