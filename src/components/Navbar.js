@@ -5,12 +5,15 @@ function Navbar({ title, mode, toggleMode, changeThemeColor }) {
   return (
     <nav className={`navbar navbar-expand-lg navbar-${mode} bg-${mode}`}>
       <div className="container-fluid">
-        {/* Brand */}
+        {/* <a className="navbar-brand" href="#">TextUtils</a> */}
+
         <Link className="navbar-brand" to="/">
           {title}
         </Link>
 
-        {/* Navbar collapse for responsive menu */}
+        {/* <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item"><a className="nav-link" href="#">About</a></li>
+            </ul> */}
         <div className="collapse navbar-collapse">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
@@ -18,6 +21,8 @@ function Navbar({ title, mode, toggleMode, changeThemeColor }) {
                 Home
               </Link>
             </li>
+
+            {/* About Link */}
             <li className="nav-item">
               <Link className="nav-link" to="/about">
                 About
@@ -26,12 +31,12 @@ function Navbar({ title, mode, toggleMode, changeThemeColor }) {
           </ul>
         </div>
 
-        {/* Dark/Light toggle */}
+        {/* ------------------- Dark/Light Mode Toggle ------------------- */}
         <button onClick={toggleMode} className="btn btn-secondary mx-2">
           {mode === "light" ? "Enable Dark Mode" : "Enable Light Mode"}
         </button>
 
-        {/* Theme color buttons */}
+        {/* ------------------- Theme Color Buttons ------------------- */}
         <div className="d-flex">
           <button
             className="btn mx-1"
@@ -40,6 +45,7 @@ function Navbar({ title, mode, toggleMode, changeThemeColor }) {
           >
             Green
           </button>
+
           <button
             className="btn mx-1"
             style={{ backgroundColor: "brown", color: "white" }}
@@ -47,6 +53,7 @@ function Navbar({ title, mode, toggleMode, changeThemeColor }) {
           >
             Brown
           </button>
+
           <button
             className="btn mx-1"
             style={{ backgroundColor: "blue", color: "white" }}
@@ -54,6 +61,7 @@ function Navbar({ title, mode, toggleMode, changeThemeColor }) {
           >
             Blue
           </button>
+
           <button
             className="btn mx-1"
             style={{ backgroundColor: "yellow", color: "black" }}
