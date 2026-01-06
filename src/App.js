@@ -27,12 +27,12 @@ function App() {
     }
   };
 
-  // const changeThemeColor = (color) => {
-  //   document.body.className = `bg-${color} ${
-  //     color === "warning" || color === "light" ? "text-dark" : "text-light"
-  //   }`;
-  //   showAlert(`${color} theme applied`, "success");
-  // };
+  const changeThemeColor = (color) => {
+    document.body.className = `bg-${color} ${
+      color === "warning" || color === "light" ? "text-dark" : "text-light"
+    }`;
+    showAlert(`${color} theme applied`, "success");
+  };
 
   return (
     <Router>
@@ -40,7 +40,7 @@ function App() {
         title="TextUtils"
         mode={mode}
         toggleMode={toggleMode}
-        // changeThemeColor={changeThemeColor}
+        changeThemeColor={changeThemeColor}
       />
 
       <Alert alert={alert} />

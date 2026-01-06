@@ -42,35 +42,35 @@ function Navbar({ title, mode, toggleMode, changeThemeColor }) {
           </button>
 
           <div className="d-flex align-items-center">
-            {/* <button
+            <button
               className="btn btn-primary mx-1"
               onClick={() => changeThemeColor("primary")}
-            ></button> */}
+            ></button>
 
-            {/* <button
+            <button
               className="btn btn-success mx-1"
               onClick={() => changeThemeColor("success")}
-            ></button> */}
-            {/* 
+            ></button>
+
             <button
               className="btn btn-danger mx-1"
               onClick={() => changeThemeColor("danger")}
-            ></button> */}
+            ></button>
 
-            {/* <button
+            <button
               className="btn btn-warning mx-1"
               onClick={() => changeThemeColor("warning")}
-            ></button> */}
+            ></button>
 
-            {/* <button
+            <button
               className="btn btn-info mx-1"
               onClick={() => changeThemeColor("info")}
-            ></button> */}
+            ></button>
 
-            {/* <button
+            <button
               className="btn btn-dark mx-1"
               onClick={() => changeThemeColor("dark")}
-            ></button> */}
+            ></button>
           </div>
         </div>
       </div>
