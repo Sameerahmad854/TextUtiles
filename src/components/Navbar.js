@@ -5,7 +5,6 @@ function Navbar({ title, mode, toggleMode, changeThemeColor }) {
   return (
     <nav className={`navbar navbar-expand-lg navbar-${mode} bg-${mode}`}>
       <div className="container-fluid">
-        {/* Brand */}
         <Link className="navbar-brand" to="/">
           {title}
         </Link>
