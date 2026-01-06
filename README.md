@@ -37,7 +37,7 @@ Follow these instructions to run the project locally.
 ### Installation
 
 1. Clone the repository:
-   git clone https://github.com/your-username/TextUtils.git
+   git clone https://github.com/Sameerahmad854/TextUtils.git
 
 ## Navigate to the project folder:
 
