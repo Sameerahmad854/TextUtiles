@@ -5,16 +5,21 @@ function Navbar({ title, mode, toggleMode, changeThemeColor }) {
   return (
     <nav className={`navbar navbar-expand-lg navbar-${mode} bg-${mode}`}>
       <div className="container-fluid">
-        {/* <a className="navbar-brand" href="#">TextUtils</a> */}
-
+        {/* Brand */}
         <Link className="navbar-brand" to="/">
           {title}
         </Link>
 
-        {/* <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item"><a className="nav-link" href="#">About</a></li>
-            </ul> */}
-        <div className="collapse navbar-collapse">
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <Link className="nav-link" to="/">
@@ -22,53 +27,51 @@ function Navbar({ title, mode, toggleMode, changeThemeColor }) {
               </Link>
             </li>
 
-            {/* About Link */}
             <li className="nav-item">
               <Link className="nav-link" to="/about">
                 About
               </Link>
             </li>
           </ul>
-        </div>
-
-        {/* ------------------- Dark/Light Mode Toggle ------------------- */}
-        <button onClick={toggleMode} className="btn btn-secondary mx-2">
-          {mode === "light" ? "Enable Dark Mode" : "Enable Light Mode"}
-        </button>
-
-        {/* ------------------- Theme Color Buttons ------------------- */}
-        <div className="d-flex">
-          <button
-            className="btn mx-1"
-            style={{ backgroundColor: "green", color: "white" }}
-            onClick={() => changeThemeColor("green")}
-          >
-            Green
-          </button>
 
           <button
-            className="btn mx-1"
-            style={{ backgroundColor: "brown", color: "white" }}
-            onClick={() => changeThemeColor("brown")}
+            onClick={toggleMode}
+            className="btn btn-outline-secondary mx-2"
           >
-            Brown
+            {mode === "light" ? "Dark Mode" : "Light Mode"}
           </button>
 
-          <button
-            className="btn mx-1"
-            style={{ backgroundColor: "blue", color: "white" }}
-            onClick={() => changeThemeColor("blue")}
-          >
-            Blue
-          </button>
+          <div className="d-flex align-items-center">
+            {/* <button
+              className="btn btn-primary mx-1"
+              onClick={() => changeThemeColor("primary")}
+            ></button> */}
 
-          <button
-            className="btn mx-1"
-            style={{ backgroundColor: "orange", color: "black" }}
-            onClick={() => changeThemeColor("orange")}
-          >
-            orange
-          </button>
+            {/* <button
+              className="btn btn-success mx-1"
+              onClick={() => changeThemeColor("success")}
+            ></button> */}
+            {/* 
+            <button
+              className="btn btn-danger mx-1"
+              onClick={() => changeThemeColor("danger")}
+            ></button> */}
+
+            {/* <button
+              className="btn btn-warning mx-1"
+              onClick={() => changeThemeColor("warning")}
+            ></button> */}
+
+            {/* <button
+              className="btn btn-info mx-1"
+              onClick={() => changeThemeColor("info")}
+            ></button> */}
+
+            {/* <button
+              className="btn btn-dark mx-1"
+              onClick={() => changeThemeColor("dark")}
+            ></button> */}
+          </div>
         </div>
       </div>
     </nav>

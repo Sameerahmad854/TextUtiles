@@ -18,21 +18,21 @@ function App() {
   const toggleMode = () => {
     if (mode === "light") {
       setMode("dark");
-      document.body.style.backgroundColor = "#042743";
-      showAlert("Dark mode has been enabled", "success");
-      // document.title = "TextUtils - Dark Mode";
+      document.body.className = "bg-dark text-light";
+      showAlert("Dark mode enabled", "success");
     } else {
       setMode("light");
-      document.body.style.backgroundColor = "white";
-      showAlert("Light mode has been enabled", "success");
-      // document.title = "TextUtils - Light Mode";
+      document.body.className = "bg-light text-dark";
+      showAlert("Light mode enabled", "success");
     }
   };
 
-  const changeThemeColor = (color) => {
-    document.body.style.backgroundColor = color;
-    showAlert("Theme color changed!", "success");
-  };
+  // const changeThemeColor = (color) => {
+  //   document.body.className = `bg-${color} ${
+  //     color === "warning" || color === "light" ? "text-dark" : "text-light"
+  //   }`;
+  //   showAlert(`${color} theme applied`, "success");
+  // };
 
   return (
     <Router>
@@ -40,9 +40,11 @@ function App() {
         title="TextUtils"
         mode={mode}
         toggleMode={toggleMode}
-        changeThemeColor={changeThemeColor}
+        // changeThemeColor={changeThemeColor}
       />
+
       <Alert alert={alert} />
+
       <div className="container my-3">
         <Routes>
           <Route path="/about" element={<About mode={mode} />} />
@@ -50,7 +52,7 @@ function App() {
             path="/"
             element={
               <Textforms
-                heading="Try TextUtils-Word counter,Character counter"
+                heading="Try TextUtils - Word Counter & Character Counter"
                 mode={mode}
                 showAlert={showAlert}
               />
