@@ -4,7 +4,12 @@ import Navbar from "./components/Navbar";
 import Textforms from "./components/Textforms";
 import About from "./components/About";
 import Alert from "./components/Alert";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -47,7 +52,7 @@ function App() {
 
       <div className="container my-3">
         <Routes>
-          <Route path="/about" element={<About mode={mode} />} />
+          {/* Home */}
           <Route
             path="/"
             element={
@@ -58,6 +63,15 @@ function App() {
               />
             }
           />
+
+          {/* About */}
+          <Route path="/about" element={<About mode={mode} />} />
+
+          {/* Auto-fix wrong URL */}
+          <Route path="/TextUtiles" element={<Navigate to="/" />} />
+
+          {/* 404 fallback */}
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </div>
     </Router>
